@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ALDAEM</title>
+	<style>
+        * {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: Arial, sans-serif;
+		
+		}
+
+		nav {
+			background: #005A04;
+			height: 80px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 50px;
+			position: fixed;
+			width: 100%;
+			z-index: 100;
+		}
+
+		nav .logo img {
+			height: 60px;
+		}
+
+		nav ul {
+			display: flex;
+		}
+
+		nav ul li {
+			list-style: none;
+			margin: 0 10px;
+		}
+
+		nav ul li a {
+			color: #fff;
+			text-decoration: none;
+			padding: 5px 10px;
+			border-radius: 5px;
+			transition: all 0.3s ease;
+		}
+
+		nav ul li a:hover {
+			background: #CCFFBB;
+			color: #3A5F0B;
+		}
+
+		nav .menu-btn {
+			display: none;
+		}
+
+		nav input[type="checkbox"] {
+			display: none;
+		}
+
+		
+
+		@media (max-width: 1000px) {
+			nav {
+				padding: 0 20px;
+			}
+			nav ul li {
+				margin: 0 5px;
+			}
+			nav ul li a {
+				padding: 5px;
+			}
+		}
+
+		@media (max-width: 800px) {
+			nav ul {
+				flex-direction: column;
+				position: fixed;
+				top: 80px;
+				left: -100%;
+				background: #005502;
+				width: 100%;
+				height: 100vh;
+				overflow-y: auto;
+				transition: all 0.5s ease;
+			}
+			nav ul li {
+				margin: 50px 0;
+			}
+			nav ul li a {
+				border-radius: 0;
+			}
+			nav .menu-btn {
+				display: block;
+				cursor: pointer;
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				z-index: 2;
+			}
+			nav .menu-btn i {
+				color: #fff;
+				font-size: 25px;
+			}
+			nav input[type="checkbox"]:checked ~ ul {
+				left: 0;
+			}
+		}
+
+
+		.chatbot-container {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  display: flex;
+  align-items: flex-end;
+  z-index: 999;
+  width: auto;
+}
+
+.chatbot-icon {
+  position: relative;
+  margin-right: 20px;
+}
+
+.chatbot-icon img {
+  width: 60px;
+  height: 70px;
+}
+
+
+.hover-message {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F7F7F7;
+  border-radius: 5px;
+  padding: 0px;
+  display: none;
+}
+
+.chatbot-container:hover .hover-message {
+  display: block;
+}
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #005A04;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+
+
+
+
+
+
+    </style>
+	<link rel="website icon" type="png" href="/static/images/weblogo.jpg">
+
+</head>
+<body>
+	<nav>
+		<div class="logo">
+			<a href="#"><img src="/static/images/logo_main.png"></a>
+		</div>
+		<input type="checkbox" id="click">
+		<label for="click" class="menu-btn">
+			<i class="fas fa-bars"></i>
+		</label>
+		<ul>
+			<li><a class="active" href="http://127.0.0.1:5000/">Home</a></li>
+            <li><a href="http://127.0.0.1:5000/dashboard">Test Page</a></li>
+			<li><a href="http://127.0.0.1:5000/aboutUs">About Us</a></li>
+			
+		</ul>
+	</nav>
+
+
+	<img src="/static/images/aboutus.png" alt="gcjn" srcset="" style="width: 1479px; height: 741px;">
+
+
+	</div>
+
+	
+	<div class="chatbot-container">
+		<div class="chatbot-icon">
+		  <a href="https://chatbot.page/642139b435dcebd4cb9902f9" target="_blank">
+			<img src="/static/images/chat.png" alt="Chatbot Icon">
+		  </a>
+		  <span class="hover-message">Hello your ALDAEM here !</span>
+		</div>
+		
+	  </div>
+
+
+
+	  <footer>
+		<div class="container">
+		  <p>&copy; 2023 ALDAEM. All Rights Reserved.</p>
+		</div>
+	  </footer>
+</body>
+</html>

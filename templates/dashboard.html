@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+	
+}
+
+nav {
+	background: #005A04;
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 50px;
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+}
+
+nav .logo img {
+	height: 60px;
+}
+
+nav ul {
+	display: flex;
+}
+
+nav ul li {
+	list-style: none;
+	margin: 0 10px;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+	background: #CCFFBB;
+	color: #3A5F0B;
+}
+
+nav .menu-btn {
+	display: none;
+}
+
+nav input[type="checkbox"] {
+	display: none;
+}
+
+@media (max-width: 1000px) {
+	nav {
+		padding: 0 20px;
+	}
+	nav ul li {
+		margin: 0 5px;
+	}
+	nav ul li a {
+		padding: 5px;
+	}
+}
+
+@media (max-width: 800px) {
+	nav ul {
+		flex-direction: column;
+		position: fixed;
+		top: 80px;
+		left: -100%;
+		background: #005502;
+		width: 100%;
+		height: 100vh;
+		overflow-y: auto;
+		transition: all 0.5s ease;
+	}
+	nav ul li {
+		margin: 50px 0;
+	}
+	nav ul li a {
+		border-radius: 0;
+	}
+	nav .menu-btn {
+		display: block;
+		cursor: pointer;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		z-index: 2;
+	}
+	nav .menu-btn i {
+		color: #fff;
+		font-size: 25px;
+	}
+	nav input[type="checkbox"]:checked ~ ul {
+		left: 0;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+	color: #CCFFBB;
+}
+
+.container {
+	background: #005A04;
+	width: 40%;
+	margin: 0 auto;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	bottom: 205%;
+	border-radius: 5%;
+	
+}
+
+h1 {
+	margin-bottom: 30px;
+}
+
+.form-group {
+	margin: 10px 0;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+input[type="file"] {
+	margin-top: 5px;
+}
+
+.btn {
+	background: #3A5F0B;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.btn:hover {
+	background: #CCFFBB;
+	color: #3A5F0B;
+}
+
+
+
+
+
+.chatbot-container {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  display: flex;
+  align-items: flex-end;
+  z-index: 999;
+  width: auto;
+}
+
+.chatbot-icon {
+  position: relative;
+  margin-right: 20px;
+}
+
+.chatbot-icon img {
+  width: 60px;
+  height: 70px;
+}
+
+
+.hover-message {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F7F7F7;
+  border-radius: 5px;
+  padding: 0px;
+  display: none;
+}
+
+.chatbot-container:hover .hover-message {
+  display: block;
+}
+
+
+
+       
+  
+
+    </style>
+	<link rel="website icon" type="png" href="/static/images/weblogo.jpg">
+
+</head>
+<body>
+  <nav>
+		<div class="logo">
+			<a href="#"><img src="/static/images/logo_main.png"></a>
+		</div>
+		<input type="checkbox" id="click">
+		<label for="click" class="menu-btn">
+			<i class="fas fa-bars"></i>
+		</label>
+		<ul>
+			<li><a class="active" href="http://127.0.0.1:5000/">Home</a></li>
+            <li><a href="http://127.0.0.1:5000/dashboard">Test Page</a></li>
+			<li><a href="http://127.0.0.1:5000/aboutUs">About Us</a></li>
+			
+		</ul>
+	</nav>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div class="container">
+		<h1>Upload a File</h1>
+		<form action="/upload" method="POST" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="file-upload">Choose a file:</label>
+				<input type="file" id="file" name="file">
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Upload" class="btn btn-primary">
+			</div>
+		</form>
+	</div>
+  
+
+   
+    <!-- <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" class="file-input">
+      <button type="submit" class="submit-button">Upload</button>
+    </form> -->
+
+	
+	<div class="chatbot-container">
+		<div class="chatbot-icon">
+		  <a href="https://chatbot.page/642139b435dcebd4cb9902f9" target="_blank">
+			<img src="/static/images/chat.png" alt="Chatbot Icon">
+		  </a>
+		  <span class="hover-message">Hello your ALDAEM here !</span>
+		</div>
+		
+	  </div>
+
+
+
+  
+</body>
+</html>
